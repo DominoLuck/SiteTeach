@@ -1,16 +1,17 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RegisterPage.css';
+import './LoginPage.css'
 
-function RegisterPage() {
+function LoginPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    password: '',
-    passwordConfirm: ''
+    password: ''
   });
+
+const [isLoading, setIsLoading] = useState(false);
+const [error, setError] = useState('');
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,34 +25,21 @@ function RegisterPage() {
     e.preventDefault();
     console.log('Отправка формы:', formData);
    // Валид
-    if (formData.name && formData.email && formData.password && formData.passwordConfirm) {
-      alert('Регистрация успешна!');
+    if (formData.name && formData.email && formData.password) {
+      alert('успешно');
 
     }
   };
 
-  const handleBack = () => {
+const handleBack = () => {
     navigate('/');
   };
 
   return (
-    <div className="register-container">
-      <div className="register-card">
-        <h2 className="register-title">Создать аккаунт</h2>
-        <form onSubmit={handleSubmit} className="register-form">
-          <div className="form-group">
-            <label htmlFor="name" className="form-label">Имя</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Введите ваше имя"
-              className="form-input"
-              required
-            />
-          </div>
+    <div className="login-container">
+      <div className="login-card">
+        <h2 className="login-title">Войти в аккаунт</h2>
+        <form onSubmit={handleSubmit} className="login-form">
 
           <div className="form-group">
             <label htmlFor="email" className="form-label">Email</label>
@@ -100,4 +88,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default LoginPage;

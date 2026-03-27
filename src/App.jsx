@@ -1,7 +1,8 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';      // ← исправлено: ./, а не ../
-import RegisterPage from './pages/RegisterPage/RegisterPage'; // ← исправлено
+import WelcomePage  from './pages/WelcomePage/WelcomePage.jsx';      // ← исправлено: ./, а не ../
+import RegisterPage from './pages/RegisterPage/RegisterPage.jsx'; // ← исправлено
+import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
+          Route path="/login" element={<LoginPage />}
           <Route path="*" element={
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
               <h1>404 - Страница не найдена</h1>
