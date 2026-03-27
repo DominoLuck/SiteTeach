@@ -4,19 +4,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  padding: 20px;
+  min-height: 100vh; /* Это заставит контейнер занять ВЕСЬ экран */
+  background-color: #f4f4f4; /* Тот самый серый цвет */
 }
 
 .login-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  padding: 2.5rem;
+  background: white; /* Карточка ДОЛЖНА быть белой */
+  padding: 40px;
+  border-radius: 8px;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
+  display: block; /* На всякий случай */
 }
 
 .login-title {

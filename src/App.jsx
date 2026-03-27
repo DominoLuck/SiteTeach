@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<WelcomePage/>} />
           <Route path="/register" element={<RegisterPage />} />
-          Route path="/login" element={<LoginPage />}
+          <Route path="/login" element={<LoginPage />} ></Route>
           <Route path="*" element={
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
               <h1>404 - Страница не найдена</h1>

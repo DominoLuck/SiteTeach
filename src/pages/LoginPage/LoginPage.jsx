@@ -25,10 +25,7 @@ const [error, setError] = useState('');
     e.preventDefault();
     console.log('Отправка формы:', formData);
    // Валид
-    if (formData.name && formData.email && formData.password) {
-      alert('успешно');
 
-    }
   };
 
 const handleBack = () => {

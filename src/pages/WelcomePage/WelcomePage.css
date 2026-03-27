@@ -45,6 +45,7 @@
   transition: all 0.3s ease;
   font-weight: 500;
   letter-spacing: 0.5px;
+  gap: 15px;
 }
 
 .home-button:hover {
