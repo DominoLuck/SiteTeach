@@ -1,7 +1,6 @@
-export function input({ clickHandler, children, primaryColor = "base" }) {
+export function input({ onChangeHandler, label, type, placeholder, error,  }) { // label(как children) привязан к input
 	return (
-		<input className={`btn color-${primaryColor}`} onClick={clickHandler}>
-			{children}
-		</input>
+		<input>
+</input>
 	);
 }
