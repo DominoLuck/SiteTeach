@@ -1,6 +1,24 @@
-export function input({ onChangeHandler, label, type, placeholder, error,  }) { // label(как children) привязан к input
+export default function Input({
+	onChangeHandler,
+	type,
+	placeholder,
+	error,
+	labelText,
+}) {
+	// label(как children) привязан к input
 	return (
-		<input>
-</input>
+		<>
+			<label htmlFor="" className="form-label">
+				{labelText}
+			</label>
+
+			<input
+				type={type}
+				placeholder={placeholder}
+				error={error}
+				onChangeHandler={onChangeHandler}
+				className="form-input"
+			></input>
+		</>
 	);
 }
