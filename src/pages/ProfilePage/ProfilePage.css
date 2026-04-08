@@ -1,0 +1,73 @@
+/* Убираем стрелочки (спиннеры) у поля ввода возраста */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.profile-screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f0f2f5;
+	font-family: "Inter", sans-serif;
+}
+
+.profile-card {
+	background: white;
+	width: 400px; /* Фиксированная ширина как в Figma */
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.avatar-container {
+	margin-bottom: 15px;
+}
+
+.profile-avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: #eee;
+	object-fit: cover;
+}
+
+/* Выравниваем инпуты в столбик */
+.profile-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px; /* Одинаковое расстояние между полями */
+}
+
+.form-section {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-section h4 {
+	margin: 0 0 5px 0;
+	font-size: 13px;
+	color: #888;
+	text-transform: uppercase;
+}
+
+/* Сбрасываем возможные кривые отступы у компонентов Input */
+.profile-form .form-group {
+	margin-bottom: 0;
+}
+
+.profile-actions {
+	margin-top: 20px;
+}
+
+.profile-actions button {
+	width: 100%;
+}

@@ -31,6 +31,7 @@ function RegisterPage() {
 			formData.passwordConfirm
 		) {
 			alert("Регистрация успешна!");
+			navigate;
 		}
 	};
 

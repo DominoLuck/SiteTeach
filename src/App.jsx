@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import "./App.css";
 import { Button } from "./components/Button";
 import Input from "./components/Input/Input";
+import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
 function App() {
 	return (
 		<BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
 					<Route path="/" element={<HeroPage />} />
 					<Route path="/register" element={<RegisterPage />} />
 					<Route path="/login" element={<LoginPage />}></Route>
+					<Route path="/profile" element={<ProfilePage />}></Route>
 					<Route
 						path="*"
 						element={

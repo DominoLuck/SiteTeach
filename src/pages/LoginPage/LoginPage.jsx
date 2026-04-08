@@ -26,6 +26,9 @@ function LoginPage() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log("Отправка формы:", formData);
+
+		navigate;
+		("/profile");
 		// Валид
 	};
 

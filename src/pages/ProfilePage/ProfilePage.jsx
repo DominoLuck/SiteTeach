@@ -1,5 +1,3 @@
-// возраст , имя , смена пароля, аватар
-// как в фигме
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input";
@@ -8,39 +6,99 @@ import "./ProfilePage.css";
 
 function ProfilePage() {
 	const [userData, setUserData] = useState({
-		username: "",
-		email: "",
+		username: "Nameless",
+		email: "example@mail.com",
 		password: "",
-		avatar: "",
+		avatar: "https://via.placeholder.com/150", // заглушка аватара
+		age: "",
 	});
 
-	// Здесь будет логика загрузки данных при старте
 	useEffect(() => {
-		// Вызов API: getUserProfile().then(data => setUserData(data))
+		// Здесь будет загрузка данных
 	}, []);
 
 	return (
-		<div className="profile-container">
-			<h3>Профиль пользователя</h3>
-			<Input
-				labelText="Имя пользователя"
-				value={userData.username}
-				onChangeHandler={(e) =>
-					setUserData({ ...userData, username: e.target.value })
-				}
-			/>
+		<div className="profile-screen">
+			<div className="profile-card">
+				<header className="profile-header">
+					<div className="avatar-container">
+						<img
+							src={userData.avatar}
+							alt="Avatar"
+							className="profile-avatar"
+						/>
+						<button className="change-avatar-btn">
+							Изменить фото
+						</button>
+					</div>
+					<h2 className="profile-title">Настройки профиля</h2>
+				</header>
 
-			<h3>Email</h3>
-			<Input
-				labelText="Изменить почту"
-				value={userData.email}
-				onChangeHandler={(e) =>
-					setUserData({ ...userData, email: e.target.value })
-				}
-			/>
+				<form
+					className="profile-form"
+					onSubmit={(e) => e.preventDefault()}
+				>
+					<div className="form-section">
+						<h4>Личные данные</h4>
+						<Input
+							labelText="Имя пользователя"
+							value={userData.username}
+							onChangeHandler={(e) =>
+								setUserData({
+									...userData,
+									username: e.target.value,
+								})
+							}
+						/>
+						<Input
+							labelText="Возраст"
+							type="number"
+							value={userData.age}
+							onChangeHandler={(e) =>
+								setUserData({
+									...userData,
+									age: e.target.value,
+								})
+							}
+						/>
+					</div>
 
-			<Button primaryColor="primary">Сохранить изменения</Button>
+					<div className="form-section">
+						<h4>Безопасность</h4>
+						<Input
+							labelText="Email"
+							type="email"
+							value={userData.email}
+							onChangeHandler={(e) =>
+								setUserData({
+									...userData,
+									email: e.target.value,
+								})
+							}
+						/>
+						<Input
+							labelText="Новый пароль"
+							type="password"
+							placeholder="Оставьте пустым, если не хотите менять"
+							value={userData.password}
+							onChangeHandler={(e) =>
+								setUserData({
+									...userData,
+									password: e.target.value,
+								})
+							}
+						/>
+					</div>
+
+					<div className="profile-actions">
+						<Button primaryColor="primary">
+							Сохранить изменения
+						</Button>
+					</div>
+				</form>
+			</div>
 		</div>
 	);
 }
+
 export default ProfilePage;
