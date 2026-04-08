@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { loginApi } from "../../api/auth";
 import "./LoginPage.css";
-import { email } from "zod";
-import Input from "../../components/Input/Input";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 function LoginPage() {
 	const navigate = useNavigate();
@@ -40,15 +40,21 @@ function LoginPage() {
 				<form onSubmit={handleSubmit} className="login-form">
 					<div className="form-group">
 						<Input
-							type={email}
-							placeholder={"Введите почту"}
-							labelText={"Email"}
-						></Input>
+							type="email" // Пишем строкой, а не переменной из zod!
+							name="email" // Чтобы handleChange сработал
+							value={formData.email}
+							onChangeHandler={handleChange}
+							placeholder="Введите почту"
+							labelText="Email"
+						/>
 						<Input
-							type={"password"}
-							placeholder={"Введите пароль"}
-							labelText={"Пароль"}
-						></Input>
+							type="password"
+							name="password"
+							value={formData.password}
+							onChangeHandler={handleChange}
+							placeholder="Введите пароль"
+							labelText="Пароль"
+						/>
 					</div>
 
 					{/* <div className="form-group">
@@ -73,16 +79,21 @@ function LoginPage() {
 					</div>
 
 					<div className="button-group">
-						<button type="submit" className="btn btn-primary">
+						<Button
+							type="submit"
+							onClick={handleSubmit}
+							className="btn btn-secondary"
+						>
 							Войти
-						</button>
-						<button
+						</Button>
+
+						<Button
 							type="button"
 							onClick={handleBack}
 							className="btn btn-secondary"
 						>
 							Назад
-						</button>
+						</Button>
 					</div>
 				</form>
 			</div>

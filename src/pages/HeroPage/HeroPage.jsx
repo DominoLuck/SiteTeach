@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./WelcomePage.css";
+import "./HeroPage.css";
 
-function WelcomePage() {
+function HeroPage() {
 	const navigate = useNavigate();
 
 	const handleRegisterClick = () => {
@@ -16,7 +16,9 @@ function WelcomePage() {
 		<div className="home-container">
 			<div className="home-content">
 				<h1 className="home-title">Добро пожаловать!</h1>
-				<p className="home-subtitle">Рады видеть вас на нашем сайте</p>
+				<p className="home-subtitle">
+					Здесь что то должно появиться...
+				</p>
 				<button className="home-button" onClick={handleRegisterClick}>
 					Зарегистрироваться
 				</button>
@@ -28,6 +30,6 @@ function WelcomePage() {
 	);
 }
 
-export default WelcomePage;
+export default HeroPage;
 
 // сделать

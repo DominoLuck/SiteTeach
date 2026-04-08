@@ -1,18 +1,19 @@
 // Button.jsx
 export function Button({
-	clickHandler,
+	onClick,
 	children,
 	primaryColor = "base",
 	isLoading,
 	type = "button",
+	...props ///
 }) {
 	return (
-		<button>
+		<button
 			type={type}
-			className=
-			{`btn color-${primaryColor} ${isLoading ? "is-loading" : ""}`}
-			onClick={clickHandler}
+			className={`btn color-${primaryColor} ${isLoading ? "is-loading" : ""}`}
+			onClick={onClick}
 			disabled={isLoading}
+		>
 			{isLoading ? "Загрузка..." : children}
 		</button>
 	);

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegisterPage.css";
-
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
 function RegisterPage() {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ function RegisterPage() {
 						<label htmlFor="name" className="form-label">
 							Имя
 						</label>
-						<input
+						<Input
 							type="text"
 							id="name"
 							name="name"
@@ -62,7 +63,7 @@ function RegisterPage() {
 						<label htmlFor="email" className="form-label">
 							Email
 						</label>
-						<input
+						<Input
 							type="email"
 							id="email"
 							name="email"
@@ -78,7 +79,7 @@ function RegisterPage() {
 						<label htmlFor="password" className="form-label">
 							Пароль
 						</label>
-						<input
+						<Input
 							type="password"
 							id="password"
 							name="password"
@@ -92,16 +93,16 @@ function RegisterPage() {
 					</div>
 
 					<div className="button-group">
-						<button type="submit" className="btn btn-primary">
+						<Button type="submit" className="btn btn-primary">
 							Зарегистрироваться
-						</button>
-						<button
+						</Button>
+						<Button
 							type="button"
 							onClick={handleBack}
 							className="btn btn-secondary"
 						>
 							Назад
-						</button>
+						</Button>
 					</div>
 				</form>
 			</div>

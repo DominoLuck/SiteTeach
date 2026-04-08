@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import WelcomePage from "./pages/WelcomePage/WelcomePage.jsx"; // ← исправлено: ./, а не ../
+import HeroPage from "./pages/HeroPage/HeroPage.jsx"; // ← исправлено: ./, а не ../
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx"; // ← исправлено
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import "./App.css";
@@ -10,7 +10,7 @@ function App() {
 		<BrowserRouter>
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<WelcomePage />} />
+					<Route path="/" element={<HeroPage />} />
 					<Route path="/register" element={<RegisterPage />} />
 					<Route path="/login" element={<LoginPage />}></Route>
 					<Route
