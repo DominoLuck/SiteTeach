@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./HeroPage.css";
-import { use } from "react";
+import { useState } from "react";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
 
 function HeroPage() {
 	const navigate = useNavigate();
@@ -12,17 +14,17 @@ function HeroPage() {
 	const handleLoginClick = () => {
 		navigate("/login");
 	};
-	const todolist = [
-		todo1="Первая заметка",
-		todo2="ВтораяП заметка",
-		todo3="3 заметка",
-	]
+
+	const [inputText, setInputText] = useState("");
 	const [isLogin, setIsLogin] = useState(false);
-	const [todoList, setTodoList] = useState([])
+	const [todoList, setTodoList] = useState([
+		{ todo: "Первая заметка" },
+		{ todo: "ВтораяП заметка" },
+		{ todo: "3 заметка" },
+	]);
 	const handleTodoCreate = (e) => {
-		const todo = e.target
-		setTodoList(index,todo)
-	}
+		setTodoList([...todoList, { todo: inputText }]);
+	};
 	return (
 		<div className="home-container">
 			<div className="home-content">
@@ -32,27 +34,46 @@ function HeroPage() {
 				</p>
 				<div className="todo__container">
 					<ul>
-					todolist.map((todo, index) => {
-						<li id={index}>{todo}</li>
-					})
+						{todoList.map((todo, index) => (
+							<li className="todo-item" id={index}>
+								{todo.todo}
+							</li>
+						))}
 					</ul>
 
 					<div className="todo-create">
-						<input type="text" name="" id="" placeholder="Введите заметку"/>
-						<button className="todo-create-btn" onSubmit={handleTodoCreate}>Создать заметку</button>						
+						<Input
+							type="text"
+							value={inputText}
+							name=""
+							id=""
+							onChange={(e) => setInputText(e.target.value)}
+							placeholder="Введите заметку"
+						/>
+						<Button
+							className="todo-create-btn"
+							onClick={handleTodoCreate}
+						>
+							Создать заметку
+						</Button>
 					</div>
 				</div>
-				{isLogin && (<div className="Auth-container">
-					<button
-						className="home-button"
-						onClick={handleRegisterClick}
-					>
-						Зарегистрироваться
-					</button>
-					<button className="home-button" onClick={handleLoginClick}>
-						Войти
-					</button>
-				</div>)}
+				{!isLogin && (
+					<div className="Auth-container">
+						<button
+							className="home-button"
+							onClick={handleRegisterClick}
+						>
+							Зарегистрироваться
+						</button>
+						<button
+							className="home-button"
+							onClick={handleLoginClick}
+						>
+							Войти
+						</button>
+					</div>
+				)}
 			</div>
 		</div>
 	);

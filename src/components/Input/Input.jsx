@@ -1,6 +1,6 @@
 // Input.jsx
 export default function Input({
-	onChangeHandler,
+	onChange,
 	type,
 	placeholder,
 	error,
@@ -22,7 +22,7 @@ export default function Input({
 				type={type}
 				placeholder={placeholder}
 				error={error}
-				onChange={onChangeHandler}
+				onChange={onChange}
 				className="form-input"
 				required
 			></input>

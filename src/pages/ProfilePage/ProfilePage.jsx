@@ -43,7 +43,7 @@ function ProfilePage() {
 						<Input
 							labelText="Имя пользователя"
 							value={userData.username}
-							onChangeHandler={(e) =>
+							onChange={(e) =>
 								setUserData({
 									...userData,
 									username: e.target.value,
@@ -54,7 +54,7 @@ function ProfilePage() {
 							labelText="Возраст"
 							type="number"
 							value={userData.age}
-							onChangeHandler={(e) =>
+							onChange={(e) =>
 								setUserData({
 									...userData,
 									age: e.target.value,
@@ -69,7 +69,7 @@ function ProfilePage() {
 							labelText="Email"
 							type="email"
 							value={userData.email}
-							onChangeHandler={(e) =>
+							onChange={(e) =>
 								setUserData({
 									...userData,
 									email: e.target.value,
@@ -81,7 +81,7 @@ function ProfilePage() {
 							type="password"
 							placeholder="Оставьте пустым, если не хотите менять"
 							value={userData.password}
-							onChangeHandler={(e) =>
+							onChange={(e) =>
 								setUserData({
 									...userData,
 									password: e.target.value,

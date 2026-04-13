@@ -1,59 +1,63 @@
-
-
 .home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  min-width: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	min-width: 100vh;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		sans-serif;
 }
 
 .home-content {
-  text-align: center;
-  background: white;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 90%;
+	text-align: center;
+	background: white;
+	padding: 3rem;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	width: 90%;
 }
 
 .home-title {
-  color: #333;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+	color: #333;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 .home-subtitle {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+	color: #666;
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	line-height: 1.5;
 }
 
 .home-button {
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  background-color: #667eea;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  gap: 15px;
+	padding: 12px 30px;
+	font-size: 1.1rem;
+	background-color: #667eea;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	gap: 15px;
 }
 
 .home-button:hover {
-  background-color: #5a67d8;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+	background-color: #5a67d8;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 .home-button:active {
-  transform: translateY(0);
+	transform: translateY(0);
+}
+
+.todo-item {
+	color: #333;
 }

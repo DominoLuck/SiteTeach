@@ -46,7 +46,7 @@ function LoginPage() {
 							type="email" // Пишем строкой, а не переменной из zod!
 							name="email" // Чтобы handleChange сработал
 							value={formData.email}
-							onChangeHandler={handleChange}
+							onChange={handleChange}
 							placeholder="Введите почту"
 							labelText="Email"
 						/>
@@ -54,7 +54,7 @@ function LoginPage() {
 							type="password"
 							name="password"
 							value={formData.password}
-							onChangeHandler={handleChange}
+							onChange={handleChange}
 							placeholder="Введите пароль"
 							labelText="Пароль"
 						/>
@@ -78,7 +78,7 @@ function LoginPage() {
 					</div> */}
 
 					<div className="register-group">
-						<Link to="/register">Зарегестрироватсья</Link>
+						<Link to="/register">Зарегестрироваться</Link>
 					</div>
 
 					<div className="button-group">
