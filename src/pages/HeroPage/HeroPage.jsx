@@ -3,6 +3,7 @@ import "./HeroPage.css";
 import { useState } from "react";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
+import { nanoid } from "nanoid";
 
 function HeroPage() {
 	const navigate = useNavigate();
@@ -15,6 +16,8 @@ function HeroPage() {
 		navigate("/login");
 	};
 
+	const handleDelete = () => {};
+
 	const [inputText, setInputText] = useState("");
 	const [isLogin, setIsLogin] = useState(false);
 	const [todoList, setTodoList] = useState([
@@ -25,17 +28,16 @@ function HeroPage() {
 	const handleTodoCreate = (e) => {
 		setTodoList([...todoList, { todo: inputText }]);
 	};
+
 	return (
 		<div className="home-container">
 			<div className="home-content">
 				<h1 className="home-title">Добро пожаловать!</h1>
-				<p className="home-subtitle">
-					Здесь что то должно появиться...
-				</p>
+				<p className="home-subtitle"></p>
 				<div className="todo__container">
 					<ul>
-						{todoList.map((todo, index) => (
-							<li className="todo-item" id={index}>
+						{todoList.map((todo) => (
+							<li className="todo-item" id={nanoid()}>
 								{todo.todo}
 							</li>
 						))}
