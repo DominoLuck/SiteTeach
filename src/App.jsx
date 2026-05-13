@@ -1,40 +1,45 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeroPage from "./pages/HeroPage/HeroPage.jsx"; // ← исправлено: ./, а не ../
-import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx"; // ← исправлено
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import NotesPage from "./pages/NotesPage/NotesPage.jsx";
+import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import "./App.css";
-import { Button } from "./components/Button";
-import Input from "./components/Input/Input";
 import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { Layout } from "./components/Layout";
+import { AuthProvider } from "./context/AuthContext";
+import "./App.css";
+
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="App">
-				<Routes>
-					<Route path="/" element={<HeroPage />} />
-					<Route path="/register" element={<RegisterPage />} />
-					<Route path="/login" element={<LoginPage />}></Route>
-					<Route path="/profile" element={<ProfilePage />}></Route>
-					<Route
-						path="*"
-						element={
-							<div
-								style={{
-									textAlign: "center",
-									marginTop: "50px",
-								}}
-							>
-								<h1>404 - Страница не найдена</h1>
-								<button
-									onClick={() => (window.location.href = "/")}
-								>
-									Вернуться на главную
-								</button>
-							</div>
-						}
-					/>
-				</Routes>
-			</div>
+			<AuthProvider>
+				<div className="App">
+					<Routes>
+						<Route element={<Layout />}>
+							<Route index element={<Navigate to="/notes" replace />} />
+							<Route
+								path="/notes"
+								element={
+									<ProtectedRoute>
+										<NotesPage />
+									</ProtectedRoute>
+								}
+							/>
+							<Route
+								path="/profile"
+								element={
+									<ProtectedRoute>
+										<ProfilePage />
+									</ProtectedRoute>
+								}
+							/>
+						</Route>
+
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/register" element={<RegisterPage />} />
+						<Route path="*" element={<Navigate to="/notes" replace />} />
+					</Routes>
+				</div>
+			</AuthProvider>
 		</BrowserRouter>
 	);
 }

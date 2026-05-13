@@ -1,31 +1,39 @@
-// Input.jsx
+import "./Input.css";
+
 export default function Input({
 	onChange,
-	type,
+	type = "text",
 	placeholder,
 	error,
-	labelText,
+	labelText = "",
 	name,
 	value,
+	className = "",
+	required = true,
+	id,
+	...props
 }) {
-	// label(как children) привязан к input
-	return (
-		<>
-			<label htmlFor={name} className="form-label">
-				{labelText}
-			</label>
+	const inputId = id || name;
 
+	return (
+		<div className={`form-control ${className}`}>
+			{labelText ? (
+				<label htmlFor={inputId} className="form-label">
+					{labelText}
+				</label>
+			) : null}
 			<input
-				id={name}
+				id={inputId}
 				name={name}
 				value={value}
 				type={type}
 				placeholder={placeholder}
-				error={error}
 				onChange={onChange}
 				className="form-input"
-				required
-			></input>
-		</>
+				required={required}
+				{...props}
+			/>
+			{error ? <p className="form-error">{error}</p> : null}
+		</div>
 	);
 }

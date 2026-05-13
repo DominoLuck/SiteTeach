@@ -1,107 +1,56 @@
 /* src/pages/loginPage/loginPage.css */
 
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Это заставит контейнер занять ВЕСЬ экран */
-  background-color: #f4f4f4; /* Тот самый серый цвет */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f4f4f4;
 }
 
 .login-card {
-  background: white; /* Карточка ДОЛЖНА быть белой */
-  padding: 40px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-  display: block; /* На всякий случай */
+	background: white;
+	padding: 40px;
+	border-radius: 8px;
+	width: 100%;
+	max-width: 400px;
+	display: block;
 }
 
 .login-title {
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: 600;
+	color: #333;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	font-weight: 600;
 }
 
 .login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-label {
-  color: #555;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.form-input {
-  padding: 12px 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.form-input:focus {
-  border-color: #f5576c;
-  box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.1);
-}
-
-.form-input::placeholder {
-  color: #aaa;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 .button-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
 }
 
-.btn {
-  flex: 1;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.button-group .btn {
+	flex: 1;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
+.register-group {
+	text-align: right;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
-}
-
-.btn-secondary {
-  background-color: #e0e0e0;
-  color: #666;
-}
-
-.btn-secondary:hover {
-  background-color: #d0d0d0;
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0);
+.register-group a {
+	color: #646cff;
 }

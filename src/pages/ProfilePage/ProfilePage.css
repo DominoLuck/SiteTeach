@@ -16,7 +16,7 @@ input::-webkit-inner-spin-button {
 
 .profile-card {
 	background: white;
-	width: 400px; /* Фиксированная ширина как в Figma */
+	width: 420px;
 	padding: 30px;
 	border-radius: 12px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -25,6 +25,12 @@ input::-webkit-inner-spin-button {
 .profile-header {
 	text-align: center;
 	margin-bottom: 25px;
+}
+
+.profile-caption {
+	margin: 8px 0 0;
+	font-size: 0.85rem;
+	color: #777;
 }
 
 .avatar-container {
@@ -39,11 +45,10 @@ input::-webkit-inner-spin-button {
 	object-fit: cover;
 }
 
-/* Выравниваем инпуты в столбик */
 .profile-form {
 	display: flex;
 	flex-direction: column;
-	gap: 15px; /* Одинаковое расстояние между полями */
+	gap: 15px;
 }
 
 .form-section {
@@ -59,15 +64,20 @@ input::-webkit-inner-spin-button {
 	text-transform: uppercase;
 }
 
-/* Сбрасываем возможные кривые отступы у компонентов Input */
-.profile-form .form-group {
+.profile-form .form-control {
 	margin-bottom: 0;
 }
 
 .profile-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 	margin-top: 20px;
 }
 
-.profile-actions button {
-	width: 100%;
+.profile-message {
+	margin: 0;
+	font-size: 0.9rem;
+	color: #2e7d32;
+	text-align: center;
 }

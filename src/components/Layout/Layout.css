@@ -1,0 +1,73 @@
+.app-layout {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #f4f5ff 0%, #fdf2ff 100%);
+	display: flex;
+	flex-direction: column;
+}
+
+.app-header {
+	background-color: #ffffff;
+	border-bottom: 1px solid #ebebeb;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.85rem 1.25rem;
+	flex-wrap: wrap;
+}
+
+.app-brand {
+	color: #3a3a6a;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.15rem;
+}
+
+.app-nav {
+	display: flex;
+	gap: 0.5rem 1rem;
+	flex-wrap: wrap;
+}
+
+.app-nav-link {
+	color: #4a4a75;
+	text-decoration: none;
+	padding: 0.35rem 0.5rem;
+	border-radius: 6px;
+}
+
+.app-nav-link.is-active {
+	color: #ffffff;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-auth {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.app-user-name {
+	color: #555;
+	font-size: 0.9rem;
+}
+
+.app-link {
+	background: transparent;
+	border: 1px solid transparent;
+	color: #667eea;
+	text-decoration: none;
+	padding: 0.35rem 0.65rem;
+	border-radius: 6px;
+	cursor: pointer;
+	font: inherit;
+}
+
+.app-link:hover {
+	border-color: #cfd5ff;
+}
+
+.app-main {
+	flex: 1;
+}
